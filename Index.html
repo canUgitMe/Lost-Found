@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <video autoplay muted loop id="bgvideo">
+        <source src="107303-676158761.mp4" type="video/mp4">
+    </video>
+
+    <button class="guest-login">G</button>
+
+    <div class="search-bar">
+        <input type="text" placeholder="Search">
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="#">My Profile</a></li>
+            <li><a href="#">Tokens</a></li>
+            <li><a href="#">Privacy & Security</a></li>
+            <li><a href="#">Log Out</a></li>
+        </ul>
+    </div>
+
+    <h1> 
+        <span style="color: yellow;">LOST</span>
+        <span style="color: white;">&</span>
+        <span style="color: aqua;">FOUND</span>
+    </h1>
+
+    <div class="login-container">
+        <h2>LOGIN:</h2>
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <button>Enter</button>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("active");
+        }
+        document.body.addEventListener('click', function (e) {
+            if (!document.getElementById("sidebar").contains(e.target) && !document.querySelector(".menu-toggle").contains(e.target)) {
+                document.getElementById("sidebar").classList.remove("active");
+            }
+        });
+    </script>
+</body>
+</html>
